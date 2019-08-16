@@ -32,13 +32,13 @@ groupby_group = data.groupby('group')
     	
     	print((group, value.std()))
 
-#anova
+# anova
 np.unique(data.group)
 from scipy.stats import f_oneway
 
 f_oneway(data[data.group == 'AMNESIA'].accuracy,data[data.group == 'AR'].accuracy,data[data.group == 'HOA'].accuracy,df[df.group == 'MCI'].accuracy,df[df.group == 'YA'].accuracy)
 
-#paired ttests - HOA vs patient groups 
+# paired ttests - HOA vs patient groups 
 from scipy.stats import ttest_ind 
 
 ttest_ind(data[data.group == 'HOA'].accuracy,data[data.group == 'AMNESIA'].accuracy, equal_var=False)   
